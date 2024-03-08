@@ -4,7 +4,7 @@
 # In[23]:
 
 
-#import libaries
+
 from bs4 import BeautifulSoup
 import requests
 import time
@@ -16,7 +16,7 @@ import smtplib
 # In[27]:
 
 
-# Connect to Website and pull in data
+
 
 URL = 'https://www.amazon.com/Funny-Data-Systems-Business-Analyst/dp/B07FNW9FGJ/ref=sr_1_3?dchild=1&keywords=data%2Banalyst%2Btshirt&qid=1626655184&sr=8-3&customId=B0752XJYNL&th=1'
 
@@ -52,8 +52,6 @@ print(today)
 # In[ ]:
 
 
-#Now we are appending data to the csv
-
 with open('AmazonWebScraperDataset.csv', 'a+', newline='', encoding='UTF8') as f:
     writer = csv.writer(f)
     writer.writerow(data)
@@ -62,7 +60,7 @@ with open('AmazonWebScraperDataset.csv', 'a+', newline='', encoding='UTF8') as f
 # In[31]:
 
 
-#Combine all of the above code into one function
+
 
 
 def check_price():
@@ -102,7 +100,7 @@ def check_price():
 # In[ ]:
 
 
-# Runs check_price after a set time and inputs data into your CSV
+
 
 while(True):
     check_price()
@@ -122,8 +120,7 @@ print(df)
 # In[32]:
 
 
-# If uou want to try sending yourself an email (just for fun) when a price hits below a certain level you can try it
-# out with this script
+
 
 def send_mail():
     server = smtplib.SMTP_SSL('smtp.gmail.com',465)
